@@ -14,8 +14,7 @@ ACCOUNT_JSON = 'account.json'
 @click.option('--verbose', '-v', is_flag=True, help="Increase output verbosity level")
 def main(ctx, verbose):
     """
-    A Python command-line interface (CLI) utilizing a 
-    robinhood API created by jmfernandes/robin_stocks.
+    A Python command-line interface (CLI) utilizing a robinhood API created by jmfernandes/robin_stocks.
 
     Author: Mac Fox
     """
@@ -25,46 +24,32 @@ def main(ctx, verbose):
 
     ctx.obj['VERBOSE'] = verbose 
 
-@main.command('login')
-@click.option('--email', prompt="Robinhood Email", help="Robinhood Account Email")
-@click.option('--password', prompt="Robinhood Password", help="Robinhood Account Password", 
+@main.command('get_user')
+def get_user():
+    """get_user - Return the user's account email"""
+    if(path.exists(ACCOUNT_JSON)):
+        with open(ACCOUNT_JSON, 'r') as f:
+            email = json.load(f)['email']
+        click.echo("Current user: " + email)
+    else:
+        click.echo("An account is not set. Enter 'set_user'")
+
+@main.command('set_user')
+@click.option('--email', prompt="Robinhood email", help="Robinhood Account Email")
+@click.option('--password', prompt="Robinhood password", help="Robinhood Account Password", 
               hide_input=True, confirmation_prompt=True)
-def login(email, password):
-    """login
-    Saves an email and encrypted password to account.json
-    """
+def set_user(email, password):
+    """set_user - Set the user's account login information"""
     hashed = hashpw(password, gensalt())
     account = {"email": email, "password": hashed}
-
     with open(ACCOUNT_JSON, 'w') as f:
         json.dump(account, f)
 
-@main.command('user')
-def user():
-    """user
-    Returns current user's email. Prompts login if no user exists.
-    """
-    if(path.exists(ACCOUNT_JSON)):
-
-        with open(ACCOUNT_JSON, 'r') as f:
-            email = json.load(f)['email']
-
-        click.echo("Current User: " + email)
-    
-    else:
-
-        click.echo("An account is not currently logged in. Use 'login' to set a user")
-
-        
-
-
-@main.command('get_gains')
-@click.option('-p', '--password', prompt="Robinhood Password", help="Robinhood Account Password", 
+@main.command('get_total_gains')
+@click.option('-p', '--password', prompt="Robinhood password", help="Robinhood Account Password", 
               hide_input=True)
-def get_gains(password):
-    """get_gains
-    Returns the current gains for the user.
-    """
+def get_total_gains(password):
+    """get_total_gains - Return the total gains for the user's account"""
     with open(ACCOUNT_JSON, 'r') as f:
         account = json.load(f)
     
@@ -117,16 +102,23 @@ def get_gains(password):
         click.echo("Incorrect Robinhood Password")
 
 @main.command('get_history')
-@click.option('--password', prompt="Robinhood Password", help="Robinhood Account Password", 
+@click.option('--password', prompt="Robinhood password", help="Robinhood Account Password", 
               hide_input=True)
 @click.option('--save', is_flag=True, help="Save data to .csv file.")
 @click.argument('ticker')
 @click.argument('interval')
 @click.argument('span')
 def get_history(password, save, ticker, interval, span):
-    """get_history
+    """get_history - Get a historical data range for a specific stock.
+    
+    TICKER - The stock symbol, i.e. TSLA.
+    
+    INTERVAL - 5minute 10minute hour day week.
+    
+    SPAN - day week month 3month year 5year.
 
-    Gets INTERVAL data for TICKER from last SPAN
+    example - python robincli.py get_history --save TSLA 5minute day
+
     """
     with open(ACCOUNT_JSON, 'r') as f:
         account = json.load(f)
@@ -139,7 +131,16 @@ def get_history(password, save, ticker, interval, span):
         data = r.get_stock_historicals(ticker, interval, span)
         df = pd.DataFrame.from_dict(data)
         df = df.drop(['session', 'interpolated', 'symbol'], axis=1)
-        click.echo("Getting " + interval + " data for " + ticker + " from last " + span + "\n")
+
+        echo = {
+            '5minute': '5 minute interval data for ',
+            '10minute': '10 minute interval data for ',
+            'hour': 'hourly data for ', 
+            'day': 'daily data for ',
+            'week': 'weekly data for '}
+
+
+        click.echo("Getting " + echo[interval] + ticker + " from past " + span + "\n")
         print(df.to_string(index=False))
 
         if save: 
@@ -149,9 +150,6 @@ def get_history(password, save, ticker, interval, span):
     else:
         # Login Unsuccessful
         click.echo("Incorrect Robinhood Password")
-
-
-
 
 if __name__ == '__main__':
     # pylint: disable=unexpected-keyword-arg
