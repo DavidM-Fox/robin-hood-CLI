@@ -66,7 +66,7 @@ Logged in as user@email.com
 
 ```
 
-To see the historical data for a specific stock, enter ```get_history {ticker} {interval} {span}```
+To see the historical data for a specific stock, enter ```get_history {ticker} {interval} {span}```. The flag ```--save``` can be added to save the data as a ```.csv``` file.
 
 ```
 
