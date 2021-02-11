@@ -29,3 +29,12 @@ Commands:
   user         user Returns current user's email.
   
 ```
+
+Setting the user account
+
+```console
+>>> python robincli.py login
+Robinhood Email: user@mail.com
+Robinhood Password: ***
+Repeat for confirmation:***
+```
