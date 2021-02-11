@@ -8,6 +8,8 @@ This application requires the following libraries:
 * [pandas](https://github.com/pandas-dev/pandas)
 * [numpy](https://github.com/numpy/numpy)
 
+Enter ```--help``` to view available commands along with their description.
+
 ```
 
 >>> python robincli.py --help
