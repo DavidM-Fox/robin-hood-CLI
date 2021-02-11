@@ -72,7 +72,7 @@ Logged in as user@email.com
         $1000.00       $2000.00          ($0.00, %0.00)       ($1000.00, %100.00)
 
 ```
-```get_history --help``` ```get_history GME hour day```
+```get_history --help``` ```get_history TICKER INTERVAL SPAN```
 ```
 
 >>> python robincli.py get_history --help
