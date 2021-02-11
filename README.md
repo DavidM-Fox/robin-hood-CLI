@@ -1,5 +1,5 @@
 # robin-hood-cli
-A command-line interface (CLI) proof of concept written in Python for the Robinhood web app. The current functionality is limited but can easily be expanded upon. To use the CLI, the following libraries are required:
+A command-line interface (CLI) proof of concept written in Python for the Robinhood web app. The current functionality is limited but can easily be expanded upon by adding a command for each of the Robinhood API functions. To use the CLI, the following libraries are required:
 
 * [click](https://github.com/pallets/click)
 * [robin_stocks](https://github.com/jmfernandes/robin_stocks)
