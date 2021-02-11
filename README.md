@@ -30,11 +30,11 @@ Commands:
   
 ```
 
-Setting the user account
+Set the user account by using ```login```
 
 ```console
 >>> python robincli.py login
 Robinhood Email: user@mail.com
-Robinhood Password: ***
-Repeat for confirmation:***
+Robinhood Password: password
+Repeat for confirmation:password
 ```
