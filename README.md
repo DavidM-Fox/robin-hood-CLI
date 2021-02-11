@@ -7,9 +7,9 @@ This application requires the following libraries:
 * [bcrypt](https://github.com/pyca/bcrypt)
 * [pandas](https://github.com/pandas-dev/pandas)
 * [numpy](https://github.com/numpy/numpy)
-
+<strong>whoah!</strong>
 ```console
-python robincli.py --help
+<strong> python robincli.py --help
 Usage: robincli.py [OPTIONS] COMMAND [ARGS]...
 
   A Python command-line interface (CLI) utilizing a  robinhood API created
