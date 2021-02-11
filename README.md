@@ -30,7 +30,7 @@ Commands:
   
 ```
 
-Set the user account by using ```login```. The password is encrypted and saved to ```account.json```
+Set the user account by entering ```login```. The password is encrypted and saved to ```account.json```
 
 ```
 
@@ -41,7 +41,7 @@ Repeat for confirmation:password
 
 ```
 
-to view which account is being used, enter ```user```. This reads the current email saved to ```acount.json```
+To return which account is being used, enter ```user```. This reads the current email saved to ```acount.json```
 
 ```
 
