@@ -33,8 +33,20 @@ Commands:
 Set the user account by using ```login```. The password is encrypted and saved to ```account.json```
 
 ```
+
 >>> python robincli.py login
 Robinhood Email: user@mail.com
 Robinhood Password: password
 Repeat for confirmation:password
+
 ```
+
+to view which account is being used, enter ```user```. This reads the current email saved to ```acount.json```
+
+```
+
+>>> python robincli.py user
+Current User: user@mail.com
+
+```
+
