@@ -1,14 +1,13 @@
 # robin-hood-cli
-A command-line interface proof of concept written in Python for the Robinhood web app.
+A command-line interface (CLI) proof of concept written in Python for the Robinhood web app. The current functionality is limited but can easily be expanded upon. To use the CLI, the following libraries are required:
 
-This application requires the following libraries:
 * [click](https://github.com/pallets/click)
 * [robin_stocks](https://github.com/jmfernandes/robin_stocks)
 * [bcrypt](https://github.com/pyca/bcrypt)
 * [pandas](https://github.com/pandas-dev/pandas)
 * [numpy](https://github.com/numpy/numpy)
 
-Enter ```--help``` to view available commands along with their description.
+Starting off, enter ```--help``` to view the currently available commands along with their functional description.
 
 ```
 
@@ -25,14 +24,15 @@ Options:
   --help         Show this message and exit.
 
 Commands:
-  get_gains    get_gains Returns the current gains for the user.
+
   get_history  get_history Gets INTERVAL data for TICKER from last SPAN
   login        login Saves an email and encrypted password to account.json
+  total_gains  total_gains Returns the current total gains for the user.
   user         user Returns current user's email.
   
 ```
 
-Set the user account by entering ```login```. The password is encrypted and saved to ```account.json```
+A Robinhood user account must be set before any commands can function. Set the user account by entering ```login```. The account information is stored to ```account.json``` with the password being encrypted. To return which account is being used, enter ```user```.
 
 ```
 
@@ -42,9 +42,6 @@ Robinhood Password:password
 Repeat for confirmation:password
 
 ```
-
-To return which account is being used, enter ```user```. This reads the current email saved to ```acount.json```
-
 ```
 
 >>> python robincli.py user
@@ -52,11 +49,11 @@ Current User: user@mail.com
 
 ```
 
-To view the account gains from account creation date, enter ```get_gains```.
+To view the cumulative account gains, enter ```total_gains```.
 
 ```
 
->>> python robincli.py get_gains
+>>> python robincli.py total_gains
 Robinhood Password:password
 Logged in as user@email.com
 
