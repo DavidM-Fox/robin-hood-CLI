@@ -1,4 +1,4 @@
-# robin-hood-CLI
+# robin-hood-cli
 A command-line interface (CLI) written in Python for the Robinhood web app.
 
 This application utilizes the following libraries:
