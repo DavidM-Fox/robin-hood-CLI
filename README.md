@@ -14,8 +14,8 @@ Starting off, enter ```--help``` to view the currently available commands along 
 >>> python robincli.py --help
 Usage: robincli.py [OPTIONS] COMMAND [ARGS]...
 
-  A Python command-line interface (CLI) utilizing a robinhood API created
-  by jmfernandes/robin_stocks.
+  A Python command-line interface (CLI) utilizing a robinhood API created by
+  jmfernandes/robin_stocks.
 
   Author: Mac Fox
 
@@ -24,37 +24,36 @@ Options:
   --help         Show this message and exit.
 
 Commands:
-
-  get_history  get_history Gets INTERVAL data for TICKER from last SPAN
-  login        login Saves an email and encrypted password to account.json
-  total_gains  total_gains Returns the current total gains for the user.
-  user         user Returns current user's email.
+  get_history      get_history - Get a historical data range for a specific stock
+  get_total_gains  get_total_gains - Return the total gains for the user's account
+  get_user         get_user - Return the user's account email
+  set_user         set_user - Set the user's account login information
   
 ```
 
-A Robinhood user account must be set before any commands can function. Set the user account by entering ```login```. The account information is stored to ```account.json``` with the password being encrypted. To return which account is being used, enter ```user```.
+A Robinhood user account must be set before any commands can function. Set the user account by entering ```set_user```. The account information is stored to ```account.json``` with the password being encrypted. To return which account is being used, enter ```get_user```.
 
 ```
 
->>> python robincli.py login
-Robinhood Email:user@mail.com
-Robinhood Password:password
+>>> python robincli.py set_user
+Robinhood email:user@mail.com
+Robinhood password:password
 Repeat for confirmation:password
 
 ```
 ```
 
->>> python robincli.py user
-Current User: user@mail.com
+>>> python robincli.py get_user
+Current user: user@mail.com
 
 ```
 
-To view the cumulative account gains, enter ```total_gains```.
+To view the cumulative account gains, enter ```get_total_gains```.
 
 ```
 
->>> python robincli.py total_gains
-Robinhood Password:password
+>>> python robincli.py get_total_gains
+Robinhood password:password
 Logged in as user@email.com
 
 
@@ -63,7 +62,28 @@ Logged in as user@email.com
 
 ```
 
-To see the historical data for a specific stock, enter ```get_history {ticker} {interval} {span}```. The flag ```--save``` can be added to save the data as a ```.csv``` file.
+To see the historical data for a specific stock, enter ```get_history {ticker} {interval} {span}```.
+```
+
+>>> python robincli.py get_history --help
+Usage: robincli.py get_history [OPTIONS] TICKER INTERVAL SPAN
+
+  get_history - Get a historical data range for a specific stock.
+
+  TICKER - The stock symbol, i.e. TSLA.
+
+  INTERVAL - 5minute 10minute hour day week.
+
+  SPAN - day week month 3month year 5year.
+
+  example - python robincli.py get_history --save TSLA 5minute day
+
+Options:
+  --password TEXT  Robinhood Account Password
+  --save           Save data to .csv file.
+  --help           Show this message and exit.
+
+```
 
 ```
 
