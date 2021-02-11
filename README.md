@@ -50,3 +50,16 @@ Current User: user@mail.com
 
 ```
 
+To 
+
+```
+
+>>> python robincli.py get_gains
+Robinhood Password:password
+Logged in as user@email.com
+
+
+|Total Invested| |Total Equity| |Net Worth (Dividends)| |Net Worth (Other Gains)|
+        $1000.00       $2000.00          ($0.00, %0.00)       ($1000.00, %100.00)
+
+```
