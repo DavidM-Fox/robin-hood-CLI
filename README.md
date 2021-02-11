@@ -7,9 +7,10 @@ This application requires the following libraries:
 * [bcrypt](https://github.com/pyca/bcrypt)
 * [pandas](https://github.com/pandas-dev/pandas)
 * [numpy](https://github.com/numpy/numpy)
-<strong>whoah!</strong>
+
 ```console
-<strong> python robincli.py --help
+
+python robincli.py --help
 Usage: robincli.py [OPTIONS] COMMAND [ARGS]...
 
   A Python command-line interface (CLI) utilizing a  robinhood API created
@@ -26,4 +27,5 @@ Commands:
   get_history  get_history Gets INTERVAL data for TICKER from last SPAN
   login        login Saves an email and encrypted password to account.json
   user         user Returns current user's email.
+  
 ```
