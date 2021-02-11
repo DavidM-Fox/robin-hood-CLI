@@ -8,8 +8,8 @@ This application requires the following libraries:
 * [pandas](https://github.com/pandas-dev/pandas)
 * [numpy](https://github.com/numpy/numpy)
 
-```bash
-C:\github\robin-hood-cli python robincli.py --help
+```sh
+C:\github\robin-hood-cli: python robincli.py --help
 Usage: robincli.py [OPTIONS] COMMAND [ARGS]...
 
   A Python command-line interface (CLI) utilizing a  robinhood API created
