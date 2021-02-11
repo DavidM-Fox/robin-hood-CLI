@@ -35,8 +35,8 @@ Set the user account by entering ```login```. The password is encrypted and save
 ```
 
 >>> python robincli.py login
-Robinhood Email: user@mail.com
-Robinhood Password: password
+Robinhood Email:user@mail.com
+Robinhood Password:password
 Repeat for confirmation:password
 
 ```
