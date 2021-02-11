@@ -8,7 +8,7 @@ This application requires the following libraries:
 * [pandas](https://github.com/pandas-dev/pandas)
 * [numpy](https://github.com/numpy/numpy)
 
-```console
+```
 
 >>> python robincli.py --help
 Usage: robincli.py [OPTIONS] COMMAND [ARGS]...
@@ -32,7 +32,7 @@ Commands:
 
 Set the user account by using ```login```
 
-```console
+```
 >>> python robincli.py login
 Robinhood Email: user@mail.com
 Robinhood Password: password
