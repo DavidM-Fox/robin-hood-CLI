@@ -7,7 +7,8 @@ A command-line interface (CLI) proof of concept written in Python for the Robinh
 * [pandas](https://github.com/pandas-dev/pandas)
 * [numpy](https://github.com/numpy/numpy)
 
-Starting off, enter ```--help``` to view the currently available commands along with their functional description.
+A Robinhood user account must be set before any commands can function. Set the user account by entering ```set_user```. The account information is stored to ```account.json``` with the password being encrypted. To return which account is being used, enter ```get_user```.
+
 
 ```
 
@@ -30,10 +31,6 @@ Commands:
   set_user         set_user - Set the user's account login information
   
 ```
-
-A Robinhood user account must be set before any commands can function. Set the user account by entering ```set_user```. The account information is stored to ```account.json``` with the password being encrypted. To return which account is being used, enter ```get_user```.
-
-```set_user``` ```get_user```
 ```
 
 >>> python robincli.py set_user
@@ -48,7 +45,6 @@ Repeat for confirmation:password
 Current user: user@mail.com
 
 ```
-```get_total_gains --help``` ```get_total_gains```
 ```
 
 λ python robincli.py get_total_gains --help
@@ -72,7 +68,6 @@ Logged in as user@email.com
         $1000.00       $2000.00          ($0.00, %0.00)       ($1000.00, %100.00)
 
 ```
-```get_history --help``` ```get_history TICKER INTERVAL SPAN```
 ```
 
 >>> python robincli.py get_history --help
