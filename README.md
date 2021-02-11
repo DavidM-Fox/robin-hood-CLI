@@ -50,7 +50,7 @@ Current User: user@mail.com
 
 ```
 
-To 
+To view the account gains from account creation date, enter ```get_gains```.
 
 ```
 
