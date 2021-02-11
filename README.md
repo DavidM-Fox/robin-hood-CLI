@@ -30,7 +30,7 @@ Commands:
   
 ```
 
-Set the user account by using ```login```
+Set the user account by using ```login```. The password is encrypted and saved to ```account.json```
 
 ```
 >>> python robincli.py login
