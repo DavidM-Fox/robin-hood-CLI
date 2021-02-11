@@ -13,7 +13,7 @@ This application requires the following libraries:
 python robincli.py --help
 Usage: robincli.py [OPTIONS] COMMAND [ARGS]...
 
-  A Python command-line interface (CLI) utilizing a  robinhood API created
+  A Python command-line interface (CLI) utilizing a robinhood API created
   by jmfernandes/robin_stocks.
 
   Author: Mac Fox
