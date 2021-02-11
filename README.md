@@ -65,3 +65,23 @@ Logged in as user@email.com
         $1000.00       $2000.00          ($0.00, %0.00)       ($1000.00, %100.00)
 
 ```
+
+To see the historical data for a specific stock, enter ```get_history {ticker} {interval} {span}```
+
+```
+
+>>> python robincli.py get_history GME hour day
+Robinhood Password:password
+Logged in as user@email.com
+
+Getting hour data for GME from last day
+
+           begins_at open_price close_price high_price low_price  volume
+2021-02-10T15:00:00Z  50.499900   49.791900  57.800000 48.160000 2961095
+2021-02-10T16:00:00Z  49.850000   52.530000  54.419900 49.573800 1467195
+2021-02-10T17:00:00Z  52.645000   55.889600  56.800000 51.120000 1511846
+2021-02-10T18:00:00Z  55.700100   56.345000  62.830000 55.560100 4100094
+2021-02-10T19:00:00Z  56.310600   53.100000  56.870000 52.420000 1641067
+2021-02-10T20:00:00Z  53.269000   51.190400  53.449900 50.480000 1274700
+
+```
