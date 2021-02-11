@@ -33,6 +33,7 @@ Commands:
 
 A Robinhood user account must be set before any commands can function. Set the user account by entering ```set_user```. The account information is stored to ```account.json``` with the password being encrypted. To return which account is being used, enter ```get_user```.
 
+```set_user``` ```get_user```
 ```
 
 >>> python robincli.py set_user
@@ -47,9 +48,19 @@ Repeat for confirmation:password
 Current user: user@mail.com
 
 ```
+```get_total_gains --help``` ```get_total_gains```
+```
 
-To view the cumulative account gains, enter ```get_total_gains```.
+λ python robincli.py get_total_gains --help
+Usage: robincli.py get_total_gains [OPTIONS]
 
+  get_total_gains - Return the total gains for the user's account
+
+Options:
+  -p, --password TEXT  Robinhood Account Password
+  --help               Show this message and exit
+  
+```
 ```
 
 >>> python robincli.py get_total_gains
@@ -61,8 +72,7 @@ Logged in as user@email.com
         $1000.00       $2000.00          ($0.00, %0.00)       ($1000.00, %100.00)
 
 ```
-
-To see the historical data for a specific stock, enter ```get_history {ticker} {interval} {span}```.
+```get_history --help``` ```get_history GME hour day```
 ```
 
 >>> python robincli.py get_history --help
@@ -84,14 +94,13 @@ Options:
   --help           Show this message and exit.
 
 ```
-
 ```
 
 >>> python robincli.py get_history GME hour day
 Robinhood Password:password
 Logged in as user@email.com
 
-Getting hour data for GME from last day
+Getting hourly data for GME from past day
 
            begins_at open_price close_price high_price low_price  volume
 2021-02-10T15:00:00Z  50.499900   49.791900  57.800000 48.160000 2961095
