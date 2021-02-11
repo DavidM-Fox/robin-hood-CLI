@@ -7,9 +7,8 @@ A command-line interface (CLI) proof of concept written in Python for the Robinh
 * [pandas](https://github.com/pandas-dev/pandas)
 * [numpy](https://github.com/numpy/numpy)
 
-A Robinhood user account must be set before any commands can function. Set the user account by entering ```set_user```. The account information is stored to ```account.json``` with the password being encrypted. To return which account is being used, enter ```get_user```.
-
-
+An example workflow is as follows:
+1. ```--help``` to return a list of available commands.
 ```
 
 >>> python robincli.py --help
@@ -30,7 +29,9 @@ Commands:
   get_user         get_user - Return the user's account email
   set_user         set_user - Set the user's account login information
   
+  
 ```
+2. ```set_user``` to save his/her Robinhood account information.
 ```
 
 >>> python robincli.py set_user
@@ -39,24 +40,14 @@ Robinhood password:password
 Repeat for confirmation:password
 
 ```
+3. ```get_user``` to return which account is being used.
 ```
 
 >>> python robincli.py get_user
 Current user: user@mail.com
 
 ```
-```
-
-λ python robincli.py get_total_gains --help
-Usage: robincli.py get_total_gains [OPTIONS]
-
-  get_total_gains - Return the total gains for the user's account
-
-Options:
-  -p, --password TEXT  Robinhood Account Password
-  --help               Show this message and exit
-  
-```
+4. ```get_total_gains``` to return his/her total account gains.
 ```
 
 >>> python robincli.py get_total_gains
@@ -68,27 +59,7 @@ Logged in as user@email.com
         $1000.00       $2000.00          ($0.00, %0.00)       ($1000.00, %100.00)
 
 ```
-```
-
->>> python robincli.py get_history --help
-Usage: robincli.py get_history [OPTIONS] TICKER INTERVAL SPAN
-
-  get_history - Get a historical data range for a specific stock.
-
-  TICKER - The stock symbol, i.e. TSLA.
-
-  INTERVAL - 5minute 10minute hour day week.
-
-  SPAN - day week month 3month year 5year.
-
-  example - python robincli.py get_history --save TSLA 5minute day
-
-Options:
-  --password TEXT  Robinhood Account Password
-  --save           Save data to .csv file.
-  --help           Show this message and exit.
-
-```
+5. ```get_history GME hour day``` to view historical data for GME from the past day on an hourly interval.
 ```
 
 >>> python robincli.py get_history GME hour day
