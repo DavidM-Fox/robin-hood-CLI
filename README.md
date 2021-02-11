@@ -10,7 +10,7 @@ This application requires the following libraries:
 
 ```console
 
-python robincli.py --help
+>>> python robincli.py --help
 Usage: robincli.py [OPTIONS] COMMAND [ARGS]...
 
   A Python command-line interface (CLI) utilizing a robinhood API created
