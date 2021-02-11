@@ -9,7 +9,7 @@ This application requires the following libraries:
 * [numpy](https://github.com/numpy/numpy)
 
 ```
-python robincli.py --help
+C:\github\robin-hood-cli python robincli.py --help
 Usage: robincli.py [OPTIONS] COMMAND [ARGS]...
 
   A Python command-line interface (CLI) utilizing a  robinhood API created
