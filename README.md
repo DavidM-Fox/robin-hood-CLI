@@ -7,7 +7,8 @@ A command-line interface (CLI) proof of concept written in Python for the Robinh
 * [pandas](https://github.com/pandas-dev/pandas)
 * [numpy](https://github.com/numpy/numpy)
 
-An example workflow is as follows:
+## Example Usage
+An example usage is as follows:
 1. ```--help``` to return a list of available commands.
 ```
 
