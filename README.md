@@ -1,13 +1,15 @@
 # robinhood-cli
-A command-line interface (CLI) written in Python for the Robinhood web app. The current functionality is limited but can easily be expanded upon by adding a command for each of the Robinhood API functions. To use the CLI, the following libraries are required:
+A command-line interface (CLI) written in Python for the Robinhood web app. The current functionality is limited but can easily be expanded upon by adding a command for each of the Robinhood API functions.
 
+# Prerequisites
+To use the CLI, the following libraries are required:
 * [click](https://github.com/pallets/click)
 * [robin_stocks](https://github.com/jmfernandes/robin_stocks)
 * [bcrypt](https://github.com/pyca/bcrypt)
 * [pandas](https://github.com/pandas-dev/pandas)
 * [numpy](https://github.com/numpy/numpy)
 
-## Example Usage
+# Example Usage
 An example usage is as follows:
 1. ```--help``` to return a list of available commands.
 ```
